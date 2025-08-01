@@ -83,8 +83,13 @@
 ============================================
 */
 
+:root {
+	--logo-mavi: #00B9F2;
+	--sari: #FFC104;
+	--koyu-mavi: #00254A;
+}
+
 body {
-  
   color:#222222;
   font-size: 16px;
 }
@@ -281,6 +286,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   position: relative;
   margin-bottom: 17px;
 }
+
 .sec-title h2 {
     position: relative;
     font-size: 30px;
@@ -288,19 +294,15 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     text-transform: uppercase;
     font-weight: 500;
 }
+
 .sec-title h2:before {
     content: "";
     position: absolute;
     bottom: -10px;
     width: 55px;
     height: 3px;
-    background: rgb(255, 169, 46);
+    background: var(--logo-mavi);
 }
-.sec-title span{
-  color: #ffc104;
-}
-
-
 
 .scroll-top {
     width: 50px;
@@ -331,10 +333,23 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
 }
 
-.preloader{ position:fixed; left:0px; top:0px; width:100%; height:100%;
- z-index:999999; background-color:#ffffff; background-position:center center;
-  background-repeat:no-repeat; background-image:url(../images/icons/preloader.gif);}
-
+/*
+=================================================
+	Loader
+=================================================
+*/
+.preloader { 
+	position:fixed; 
+	left:0px; 
+	top:0px; 
+	width:100%; 
+	height:100%;
+ 	z-index:999999; 
+	background-color:#ffffff; 
+	background-position:center center;
+  	background-repeat:no-repeat; 
+	background-image:url(../images/icons/preloader.gif);
+}
 
 /*
 =================================================
@@ -378,11 +393,13 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-transition:.5s;
   transition:.5s;
 }
+
 .header-top .links-nav li a:hover{
-  color: #222;
+  color: var(--logo-mavi);
   -webkit-transition:.5s;
   transition:.5s;
 }
+
 .header-top .links-nav li .fa{
   padding-right:8px;
   font-size:16px;
@@ -399,27 +416,32 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   line-height:26px;
   border-left: 1px solid #ffffff;
 }
+
 .header-top .social-links a:last-child{
   border-right: 1px solid #ffffff;
 }
+
 .header-top a:hover{
-  color: #2098d1;
+  color: var(--logo-mavi) !important;
 }
 
 /*logo*/
 
 .main-logo {
-  margin: 20px 0px 20px;
+	margin: 5px 0px;
 }
 
-/*menu*/
+.main-logo img {
+	width: 110px;
+}
+
+/* menu */
 
 .theme_menu {
-
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   background: #fff;
-  
 }
+
 .theme_menu .menu-column {
   padding: 0;
 }
@@ -427,9 +449,11 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 .theme_menu .menuzord {
   padding: 0;
 }
+
 .menuzord-menu {
   margin-top:29px;
 }
+
 .menuzord-menu > li > a {
     padding: 8px 17px 28px;
     text-transform: uppercase;
@@ -440,6 +464,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
 }
+
 .menuzord-menu > li > a:hover{
   color:#ffc104;
   
@@ -449,6 +474,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   position:relative;
   color: #ffc104;
 }
+
 .menuzord-menu > li.current > a:before{
     content: "";
     position: absolute;
@@ -483,8 +509,6 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     font-size: 14px;
 }
 
-
-
 .nav_side_content {
   margin-top: 33px;
   float: left;
@@ -496,8 +520,6 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   border-left: 1px solid #ececec;
   padding-left: 5px;
 }
-
-
 
 /* Mainmenu fixed style */
 @-webkit-keyframes menu_sticky {
@@ -526,13 +548,26 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
           animation-timing-function: ease-out;
 }
 
+.mainmenu-area .main-menu .navigation {
+	/* Navbar'daki itemleri "Tercih ettiğimiz markalar" iteminin ilk satırına hizalı olması için */
+	display: flex;
+	align-items: flex-start;
+	/* Sola Hizalamak İçin */
+	justify-content: end;
+	/* max-height: 57px !important; */
+}
+
+.mainmenu-area .main-menu .navigation .nav-item-tercih a {
+	padding-bottom: 8px !important;
+}
+
 /*** 
 =============================================
     6. Rev Slider style
 =============================================
 ***/
 .rev_slider_wrapper .slide-content-box h1 {
-  color: #00254a;
+  color: var(--logo-mavi);
   font-size: 60px;
   line-height: 62px;
   margin: 14px 0 9px;
@@ -784,8 +819,6 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   display:inline-block;
 }
 
-
-
 .latest-news .owl-theme .owl-nav {
     margin: 0;
     padding: 0;
@@ -833,12 +866,15 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-transition: all ease-in 400ms;
   -moz-transition: all ease-in 400ms;
 }
+
 .feature .item-list .item:hover .overlay{
   bottom:0;
 }
+
 .feature .item-list .item:hover .content-box{
   opacity: 111;
 }
+
 .feature .item-list .item .content-box{
   top: 40%;
   margin-top: -30px;
@@ -849,12 +885,14 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   color: #fff;
   opacity: 0;
 }
+
 .feature .item-list .item .content-box h3{
     margin-bottom: 10px;
     text-transform:uppercase;
     font-size:20px;
     font-weight:700;
 }
+
 .feature .item-list .item .overlay{
   background-color: rgba(0, 37, 74, 0.88);
   display: inline-block;
@@ -871,16 +909,16 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   z-index: 0;
 }
 
-
-
 .feature .item-list .item .image-box{
   position:relative;
   overflow: hidden;
   border: 1px solid #ffc104;
 }
+
 .feature .item-list .item .image-box{
   overflow: hidden;
 }
+
 .feature .item-list .item .image-box img{
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -888,14 +926,15 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   transition: all 0.5s ease 0s;
   width: 100%;
 }
+
 .feature .item-list .item:hover .image-box img{
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
 .item-list .button-style-two {
-   
 }
+
 .feature .item-list .item .feature-btn .button-style-two{
       border-radius: 50px;
       position: relative;
@@ -912,6 +951,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   border: 1px solid #ffffff;
   transition: .5s;
 }
+
 /* 
 ==============================================
   10. google map Section style
@@ -921,10 +961,10 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   width: 100%;
   height: 400px;
 }
+
 .home-google-map .gmnoprint {
     display: none;
 }
-
 
 /*** 
 ====================================================================
@@ -2174,10 +2214,10 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     15. page_pagination style
 =============================================
 ***/
-. {
+/* . {
   text-align: center;
   padding-top: 20px;
-}
+} */
 .page_pagination li {
   display: inline-block;
   margin:0 4px;
@@ -2652,109 +2692,108 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 
 /*
 ===================================================
-  16. footer style
+  16. footer 
 ===================================================
 */
 
-.footer p{
+.footer {
+	position: relative;
+	background: url(../images/background/bg-1.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+
+.footer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 37, 74, 0.88);
+	z-index: -1;
+}
+
+.footer .footer-upper {
+    padding: 75px 0 65px;
+}
+
+.footer p {
    font-family: 'Roboto', sans-serif;
    font-weight:400;
    font-size:14px;
    color: #fff;
    line-height: 27px;
 }
+
 .footer .footer-upper {
-    padding: 60px 0px 50px;
+    padding: 10px 0px 25px;
 }
+
 .footer-widget ul {
     margin: 0;
     padding: 0;
 }
+
 .footer-widget ul li {
     list-style: none;
 }
-.footer-widget.about-widget img {
-    margin-bottom: 27px;
+
+.footer-upper .about-widget {
+    display: flex;
+    flex-direction: column;
 }
-.footer-widget.about-widget p {
-    margin: 0;
+
+/* .footer-upper .about-widget .footer-logo {
+	text-align: center;
+	justify-content: center;
+    align-items: center;  
+} */
+
+.footer-upper .about-widget img {
+    max-width: 200px; 
+    height: auto; 		/* Orantılı küçülmesi için yüksekliği otomatik bırakıldı*/
+    margin-bottom: 17px;
+    /* display: block; 	/* Margin auto ile yatayda ortalamak için block element olmalı */
+    /* margin-left: auto; 	/* Yatayda ortalamak için */
+    /* margin-right: auto; /* Yatayda ortalamak için */
 }
+
 .footer-widget h3.title {
     font-size: 24px;
     text-transform: capitalize;
     margin: 0;
 }
+
 .footer-widget.quick-links ul li a {
     font-size: 14px;
     line-height: 38px;
-    tranisition: all .3s ease;
-}
-.footer-widget.quick-links ul li a:hover {
-    color: #d62929;
-}
-.footer-widget.contact-widget input,
-.footer-widget.contact-widget textarea {
-    width: 100%;
-    height: 50px;
-    border: none;
-    outline: none;
-    padding: 0 20px;
-}
-.footer-widget.contact-widget textarea {
-    height: 100px;
-    padding-top: 15px;
-    margin-bottom: 5px;
-}
-.footer-widget.contact-widget button {
-    width: 100%;
-    letter-spacing: 1px;
-    height: 50px;
-    background: #2098d1;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-    border: none;
-    outline: none;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    line-height: 50px;
-    font-weight: 700;
-    -webkit-transition:all .3s ease;
     transition: all .3s ease;
 }
-.footer-widget.contact-widget button:hover {
-    background: #fff;
-    color: #ffc104;
+
+.footer-widget.quick-links ul li {
+    margin-bottom: 8px;
 }
-.footer-widget.contact-widget .column{
-  padding:0 10px;
-}
-.row-10{
-  margin:0px -10px;
-  
-}
+
 .footer .footer-upper .item{
   margin-top: 40px;
 }
+
 .footer .footer-upper .link_btn .button-style-one{
   color: #fff;
   margin-top: 20px;
   border-bottom: 1px solid #fff;
 }
-.footer.bg-style .footer .footer-upper {
-    padding: 75px 0 65px;
-}
-.footer.bg-style .footer-widget h3.title {
+
+.footer-widget h3.title {
     margin-bottom: 31px;
     position: relative;
     font-weight: 500;
-    color: #ffc104;
+    color: var(--logo-mavi);
 }
-.footer.bg-style .footer-widget.quick-links ul li {
    
-    margin-bottom: 8px;
-}
-.footer.bg-style .footer-widget.quick-links ul li a {
+.footer-widget.quick-links ul li a {
     display: block;
     font-size: 14px;
     color: #fff;
@@ -2765,7 +2804,9 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
 }
-.footer.bg-style .footer-widget.quick-links ul li a:before {
+ 
+/* Hızlı Menü Link İkonları */
+.footer-widget.quick-links ul li a:before {
     color: #ffffff;
     content: '\f105';
     font-family: "FontAwesome";
@@ -2775,93 +2816,30 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     position: absolute;
     top: 2px;
 }
-.footer.bg-style .footer-widget.quick-links ul li a:hover {
-    color: #ffc104;
-}
-.footer.bg-style .footer-widget.quick-links ul li a:hover:before{
-  color:#fff;
-}
-.footer .footer-upper .footer-map .google-map{
-  height: 200px;
-}
-
-
-.footer.bg-style .footer-widget.our-doctor ul li {
    
-    margin-bottom: 8px;
-}
-.footer.bg-style .footer-widget.our-doctor ul li a {
-    display: block;
-    font-size: 14px;
-    color: #fff;
-    line-height: 22px;
-    padding-bottom: 7px;
-    padding-left: 15px;
-    position: relative;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
-}
-.footer.bg-style .footer-widget.our-doctor ul li a:before {
-    color: #ffffff;
-    content: '\f105';
-    font-family: "FontAwesome";
-    font-size: 12px;
-    left: 0;
-    line-height: 16px;
-    position: absolute;
-    top: 2px;
-}
-.footer.bg-style .footer-widget.our-doctor ul li a:hover {
-    color: #ffc104;
-}
-.footer.bg-style .footer-widget.our-doctor ul li a:hover:before{
-  color:#fff;
-}
-
-.footer.bg-style .footer-widget.contact-widget input,
-.footer.bg-style .footer-widget.contact-widget textarea {
-    background: transparent;
-    color: #fff;
-}
-.contact-section-btn{
-  max-width:170px;
-  margin:0 auto;
-  
-}
-.footer.bg-style .footer-widget.contact-widget input {
-    height: 50px;
-    font-size: 14px;
-    font-weight: 400;
-    border: 1px solid #fff;
-    color: #fff;
-    margin-bottom: 10px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.footer.bg-style .footer-widget.contact-widget textarea {
-    height: 90px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    border: 1px solid #fff;
-    margin: 5px 0px 20px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.footer.bg-style .footer-widget.contact-widget button {
-    height: 50px;
-    line-height: 45px;
+.footer-widget.quick-links ul li a:hover {
+    color: var(--logo-mavi);
 }
 
 
-.footer-bottom{
-  color:#d1d1d1;
-  border-top: 1px solid #ffc104;
-  padding: 20px 0px 54px;
+/*
+===================================================
+	footer bottom bar
+===================================================
+*/
+
+.footer-bottom {
+	background-color: var(--koyu-mavi);
+	padding: 25px !important;
+	margin: 0 !important;
+  	color:#d1d1d1;
+  	padding: 20px 0px 54px;
+	text-align: center;
 }
+
 .footer-bottom .social-links a{
   display:inline-block;
-  font-size:13px;
+  font-size: 20px;
   font-weight:normal;
   color: #fff;
   padding: 0px 15px;
@@ -2869,13 +2847,23 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 }
 
 .footer-bottom a:hover{
-  color: #ffc104;
+  color: var(--logo-mavi);
 }
+
 .footer-bottom .copyright-text{
   font-family: 'Open Sans', sans-serif;
   font-weight:400;
   font-size:14px;
   color: #fff;
+}
+
+.footer-bottom a {
+	color: var(--logo-mavi);
+	text-transform: none;
+}
+
+.footer-bottom a:hover {
+	color: #fff;
 }
 
 
@@ -2968,26 +2956,29 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   20. call-to-action styles 
 =======================================================
 */
-
 .call-to-action {
   background: #00254a;
   padding: 40px 0;
   color: #fff;
 }
+
 .call-to-action h3 {
   font-size: 34px;
   font-weight: 700;
   margin: 0;
   line-height: 30px;
-  margin-bottom: 16px;
+  margin: 16px;
 }
+
 .call-to-action p {
   margin: 0;
 }
+
 .call-to-action a.thm-btn {
     padding: 0px 24px;
     margin: 7px 0;
     border-radius: 25px;
+	border-color: var(--logo-mavi);
     background: #fff;
     color: #222222;
     letter-spacing: 1px;
@@ -2996,11 +2987,9 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 
 .call-to-action a.thm-btn.inverse:hover {
   color: #fff;
-  background: #ffc104;
+  background: var(--logo-mavi);
   transition:.5s;
-
 }
-
 
 /* 
 ==========================================================
@@ -3017,6 +3006,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   background-position:center center;
   color:#ffffff;
 }
+
 .parallax-style-one .overlay:before {
     position: absolute;
     top: 0;
@@ -3027,39 +3017,49 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     opacity: 1;
     content: "";
 }
+
 .parallax-style-one .sec-title{
   text-align:center;
   margin-bottom: 40px;
 }
+
 .parallax-style-one .sec-title h2{
   font-weight: 700;
   line-height: 39px;
   text-transform: none;
 }
+
 .parallax-style-one .sec-title h2:before{
   display: none;
 }
+
 .parallax-style-one .sec-title p{
   max-width:650px;
   margin: 0 auto;
   margin-top: 15px;
 }
 
-.parallax-style-one .link_btn{
-  
-}
 .parallax-style-one .link_btn li{
     display:inline-block;
     margin: 20px 10px 0px 0px;
 }
+
 .parallax-style-one .link_btn li a{
   letter-spacing:1px;
 }
+
 .parallax-style-one .link_btn .thm-btn.style-two:hover{
   background: transparent;
   color: #ffc104;
   border:2px solid #fff;
   color:#fff;
+}
+
+.fact-counter .count-outer .plus-sign {
+    font-size: inherit; /* Sayı ile aynı boyutta olsun */
+    font-weight: bold; /* İsterseniz daha belirgin yapın */
+    margin-left: -6px; /* Sayı ile arasında küçük bir boşluk bırakır */
+    vertical-align: top; /* Sayı ile aynı hizada olmasını sağlar */
 }
 
 
@@ -4439,22 +4439,25 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   padding: 80px 0px 60px;
   background: #f7f7f7;
 }
-.latest-projects .sec-title{
-}
+
 .latest-projects .sec-title h2:before{
   left: 50%;
   margin-left: -27px;
 }
+
 .latest-projects .single-item {
   padding-bottom: 30px;
 }
+
 .latest-projects .single-item .img-box {
   position: relative;
   overflow: hidden;
 }
+
 .latest-projects .single-item .img-box img {
   width: 100%;
 }
+
 .latest-projects .single-item .title h5 {
   color: #222;
   padding: 25px 0 0;
@@ -4463,6 +4466,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-transition:.5s ease;
   transition: .5s ease;
 }
+
 .latest-projects .single-item:hover .title h5 {
   color: #48c7ec;
   -webkit-transition:.5s ease;
@@ -4484,6 +4488,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 .latest-projects .single-item .img-box{
   overflow: hidden;
 }
+
 .latest-projects .single-item .img-box img{
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -4491,29 +4496,31 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   transition: all 0.5s ease 0s;
   width: 100%;
 }
+
 .latest-projects .single-item:hover .img-box img{
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-
-
 
 .latest-projects .single-item .img-box .overlay .social {
     display: table-cell;
     vertical-align: middle;
     position: relative;
 }
+
 .latest-projects .single-item .img-box .overlay .inner {
     display: table;
     width: 100%;
     height: 100%;
     position: relative;
 }
+
 .latest-projects .single-item .social a i:before {
     font-size: 30px;
     color: #fff;
     margin: 0px;
 }
+
 .latest-projects .single-item .social h4 {
     font-size: 18px;
     font-weight: 500;
@@ -4527,17 +4534,21 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   width: 100%;
   height: 100%;
 }
+
 .latest-projects .single-item .img-box .overlay .box .content {
   display: table-cell;
   vertical-align: bottom;
 }
+
 .latest-projects .single-item .img-box .overlay .top {
   text-align: center;
 }
+
 .latest-gallery .single-item .img-box .overlay .top ul {
   margin-bottom: 0;
   margin-bottom: 20%;
 }
+
 .latest-projects .single-item .img-box .overlay .top li a {
   width: 45px;
   height: 45px;
@@ -4551,15 +4562,18 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-transition:.4s ease;
   transition: .4s ease;
 }
+
 .latest-projects .single-item .img-box .overlay .top li a:hover {
   background: #1f1f1f;
   color: #48c7ec;
 }
+
 .latest-projects .single-item .img-box .overlay .bottom {
   padding: 10px 0px;
   padding-right: 0;
   text-align: center;
 }
+
 .latest-projects .single-item .img-box .overlay .bottom .title h3 {
   margin: 0;
   color: #fff;
@@ -4567,6 +4581,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   line-height: 30px;
   font-size: 15px;
 }
+
 .latest-projects .single-item:hover .img-box .overlay {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -4574,13 +4589,15 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   visibility: visible;
 }
 
-
 .latest-projects .post-filter {
   display: inline-block;
   margin: 0;
   margin-bottom: 40px;
 }
-.latest-projects .post-filter li {padding: 5px 5px;}
+
+.latest-projects .post-filter li {
+	padding: 5px 5px;
+}
 
 .latest-projects .post-filter li span {
   padding: 7px 20px;
@@ -4596,6 +4613,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-transition:.5s ease;
   transition: .5s ease;
 }
+
 .latest-projects .post-filter li:hover span,
 .post-filter li.active span {
   color: #fff;
@@ -4604,17 +4622,27 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   transition: .5s ease;
 }
 
+.latest-projects .link_btn {
+	text-align: center;
+	justify-content: center;
+}
 
+.latest-projects .link_btn .thm-btn {
+	background-color: var(--logo-mavi);
+	border-color: var(--logo-mavi);
+	font-size: 20px;
+}
+
+.latest-projects .link_btn .thm-btn:hover {
+	background-color: #fff;
+	color: var(--logo-mavi);
+}
 
 /*** 
 =============================================
      shop style
 =============================================
 ***/
-
-
-
-
 .shop {
   position: relative;
   padding: 80px 0px 80px;
@@ -5422,11 +5450,10 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 /*menu*/
 
 .theme_menu {
-
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   background: #fff;
-  
 }
+
 .theme_menu .menu-column {
   padding: 0;
 }
@@ -5449,11 +5476,13 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   50%  {margin-top: -90px;}
   100% {margin-top: 0;}
 }
+
 @keyframes menu_sticky {
   0%   {margin-top:-100px;}
   50%  {margin-top: -90px;}
   100% {margin-top: 0;}
 }
+
 .mainmenu-area.stricky-fixed {
   margin: 0;
   position: fixed;
@@ -5469,6 +5498,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
 }
+
 .mainmenu-area .right-area .link_btn{
   margin-top: 24px;
 }
@@ -5482,10 +5512,12 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   padding: 80px 0px 80px;
   background: #f7f7f7;
 }
+
 .about-us .sec-title{
-  text-align: center;
-  margin-bottom: 50px;
+	text-align: center;
+	margin-bottom: 50px;
 }
+
 .about-us .sec-title h2:before {
     content: "";
     position: absolute;
@@ -5494,18 +5526,19 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     bottom: -10px;
     width: 56px;
     height: 3px;
-    background: rgb(255, 169, 46);
+    background: var(--logo-mavi);
 }
-.about-us .about-info .text{}
+
+.about-us .about-info .text
 .about-us .about-info .text p{
-  color:#848484;
+  color: #848484;
 }
 
 .about-us .about-info .link_btn{
   margin-top: 20px;
 }
 
-/*benifit*/
+/* benifit (Sİlinebilir) */
 .benifit li {
     position: relative;
     color: #848484;
@@ -5523,66 +5556,33 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     top: 7px;
 }
 
-.benifit {margin-bottom: 10px;}
-/*benifit-list*/
+.benifit {
+	margin-bottom: 10px;
+}
 
+/* benifit-list */
 .benifit-list li {
   margin: 5px 0;
   color: #848484;
   font-size: 14px;
 }
+
 .benifit-list li i {
-    color: #ffc104;
+    color: var(--logo-mavi);
     margin-right: 15px;
     font-weight: 700;
     font-size: 18px;
 }
 
-
-.video-image-box{
-  position:relative;  
+.about-us .link_btn a{
+	background-color: var(--logo-mavi);
+	border: var(--logo-mavi);
 }
 
-.video-image-box .image{
-  position:relative;  
-}
-
-.video-image-box img{
-  display:block;
-  width:100%; 
-}
-
-.video-image-box .image .overlay-link{
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:100%;
-  height:100%;
-  color:#ffffff;
-  text-align:center;
-  background: rgba(0, 37, 74, 0.46);
-  transition:all 500ms ease;
-  -moz-transition:all 500ms ease;
-  -webkit-transition:all 500ms ease;
-  -ms-transition:all 500ms ease;
-  -o-transition:all 500ms ease;
-}
-
-.video-image-box .image .overlay-link:hover {
-    background: rgba(0, 37, 74, 0.84);
-}
-
-.video-image-box .image .overlay-link .icon{
-  position:absolute;
-  left:50%;
-  top:50%;
-  margin-top:-25px;
-  margin-left:-25px;
-  width: 58px;
-  height: 41px;
-  line-height: 43px;
-  font-size:60px;
-  color: #f7f7f7;
+.about-us .link_btn a:hover {
+	background-color: #fff;
+	color: var(--logo-mavi);
+	border: solid 1px var(--logo-mavi);
 }
 
 /*** 
@@ -5590,25 +5590,29 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     service Section style
 ====================================================================
 ***/
-
 .service {
   position: relative;
   padding: 80px 0px 30px;
 }
+
 .service.style-2{
   padding:80px 0px 80px;
 }
+
 .service .item {
   padding: 4px;
   margin-bottom: 5px;
   border: 1px solid #ededed;
 }
+
 .service.style-2 .sec-title{
   margin-bottom: 0px;
 }
+
 .service.style-2 .sec-title h2{
   margin-bottom: 0px;
 }
+
 .service.style-2 .single-column{
   margin-top: 50px;
 }
@@ -5637,6 +5641,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
     transition-property: transform, opacity, -webkit-transform;
     z-index: 9;
 }
+
 .service .item:hover:before {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -5652,6 +5657,7 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 .service .item .img-box img {
   width: 100%;
 }
+
 .service .item .default-overlay-outer{
   opacity:0;
   top:-100%;
@@ -5672,20 +5678,13 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
   padding-bottom: 50px;
 }
 
-.service .content {padding: 12px 8px;}
-
-.service .content h5 {
-  color: #ffc104;
-  font-size: 14px;
-  }
+.service .content {
+	padding: 12px 8px;
+}
 
 .service .content h4 {padding: 15px 0;
   font-size: 20px;
   color: #222;
-}
-
-.service .content p {
-
 }
 
 .service .owl-theme .owl-nav {
@@ -5716,9 +5715,20 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 }
 
 .service .owl-theme .owl-nav [class*=owl-]:hover {
-    color: #ffc104;
+    color: var(--logo-mavi);
     -webkit-transition: .5s ease;
     transition: .5s ease;
+}
+
+.service .thm-btn {
+	background-color: var(--logo-mavi);
+	border-color: var(--logo-mavi);
+}
+
+.service .thm-btn:hover {
+	background-color: #fff;
+	color: var(--logo-mavi);
+	border-color: var(--logo-mavi);
 }
 
 
@@ -5916,36 +5926,42 @@ input,textarea {display: block; font-size: 16px; line-height: 28px; outline: non
 .brand-area {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #00254a;
+  background: var(--koyu-mavi);
 }
 
 .brand-area .brand .owl-stage-outer{
   z-index:10;   
 }
+
 .brand-area .brand .single-item {
-  border: 1px dashed #dadada;
-  height: 105px;
-  -webkit-transition: all 300ms ease-in 0s;
-  transition: all 300ms ease-in 0s;
-  text-align: center;
+	height: 105px;
+	border: 1px dashed #dadada;
+	text-align: center;
+  	justify-content: center;
+  	-webkit-transition: all 300ms ease-in 0s;
+  	transition: all 300ms ease-in 0s;
+	display: flex;
 }
+
 .brand-area .brand .single-item img {
-  display: inline-block;
-  max-width: 100% !important;
+  object-fit: contain;
+  width: 100%;
+  height: 100%; 
   opacity: 1;
-  padding: 35px 0;
+  padding: 10px;
   position: relative;
   -webkit-transition: all 300ms ease-in 0s;
   transition: all 300ms ease-in 0s;
-  width: auto !important;
 }
+
 .brand-area .brand .single-item:hover{
-  border: 1px dashed #ffc104;
+  border: 1px dashed var(--logo-mavi);
 }
+
 .brand-area .brand .single-item:hover img{
   opacity: .6;
 }
+
 .brand-area .owl-controls {
   display: none;
 }
-
