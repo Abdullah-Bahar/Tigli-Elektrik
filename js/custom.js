@@ -870,3 +870,13 @@ jQuery(window).on('scroll', function () {
 		factCounter();
 	})(jQuery);
 });
+
+
+window.addEventListener("scroll", function () {
+	const buttons = document.querySelectorAll(".call-me");
+	if (window.scrollY > 200) {
+	  buttons.forEach(btn => btn.classList.add("visible"));
+	} else {
+	  buttons.forEach(btn => btn.classList.remove("visible"));
+	}
+});

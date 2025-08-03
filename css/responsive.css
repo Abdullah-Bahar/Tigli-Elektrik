@@ -1,28 +1,30 @@
 @media (max-width: 1199px) {
+
 	.recent-project .owl-controls{
 		display:none;
 	}
+
 	.navigation li a {
     	padding: 7px 7px 28px;
 	}
+
 	.mainmenu-area .thm-btn {
     	padding: 0 13px;
 	}
 }
 
 @media (max-width: 1200px) and (min-width: 992px) {
-	
 	.theme_menu .thm-btn {
 		padding: 0 13px;
-
 	}
-	
 }
 
 @media (max-width: 1200px) and (min-width:992px) {
+
 	.two-column .inner-box .image-box {
 		position: relative;
 		margin-bottom: -95px;
+
 	}
 	.two-column .content-box{
 		padding: 30px 0px 80px;
@@ -30,55 +32,67 @@
 }
 
 @media (max-width: 1024px) {
+
 	.project-carousel .owl-controls .owl-nav {
-	  top: auto;
-	  left: 0;
-	  right: 0;
+		top: auto;
+		left: 0;
+		right: 0;
 	}
+
 	.recent-project .owl-controls {
-    position: absolute;
-    bottom: 45px;
-    left: -155px;
+		position: absolute;
+		bottom: 45px;
+		left: -155px;
 	}
-	
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
 
 	.right-area {
-   	 position: absolute;
-   	 right: 15px;
-   	 top: 17px;
- }
-	.mainmenu-area .menu-column{
-		float: left;
-		width: 100%;
+		position: absolute;
+		right: 15px;
+   	 	top: -14px;
 	}
+
 	.mainmenu-area .right-area {
-   		margin-right: 17px;
+   		margin-right: 3%;
 	}
+
 	.nav_side_content .search_option form {
 	    width: 250px;
 	    right: -25px;
 	    top: 52px;
 	}
+
 	.theme_menu {
 		background: #f7f7f7;
 	}
+
 	.main-logo {
 	    margin: 15px 0 15px;
+		text-align: center;
 	}
+
 	.nav_side_content {
 		margin-top: 31px;
 	}
+
 	.two-column .content-box{
 		padding: 30px 0px 80px;
 	}
+
 	.about .item-list .item.clearfix {
 		margin-top: 0px;
 	}
-	.call-to-action {text-align: center;}
-	.call-to-action a.thm-btn {float: none !important;  margin-top:20px;}
+
+	.call-to-action {
+		text-align: center;
+	}
+
+	.call-to-action a.thm-btn {
+		float: none !important;  
+		margin-top:20px;
+	}
 	
 	.about-faq .accordion-box{
 		margin-top: 50px;
@@ -86,14 +100,17 @@
 }
 
 @media (max-width: 768px) {
+	
 	.header-top .top-right, 
 	.header-top .top-left {
 		width: 100%;
 		text-align:center;
 	}
+	
 	.about-us .about-info{
 		margin-bottom: 50px;
 	}
+	
 	.header-top .top-right ul,
 	.header-top .top-left ul {
 		text-align: center;
@@ -108,6 +125,7 @@
 	.our-team .owl-controls .owl-nav{
 		margin-bottom: 10px !important;
 	}
+	
 	.latest-news .owl-theme .owl-nav{
 		margin-bottom: 10px !important;
 	}
@@ -115,29 +133,34 @@
 	.page-title .path{
 		text-align:center;
 	}
+	
 	.sidebar-page .sidebar {
 		position: relative;
 		padding-left: 0px;
 	}
+	
 	.header-top .top-right{
 		margin:10px 0px;
 	}
+	
 	.footer-bottom{
 		padding-bottom:70px;
 	}
+	
 	.footer-bottom .pull-left{
 		text-align:center;
 		width:100%;
 	}
+	
 	.footer-bottom .pull-right{
 		text-align:center;
 		margin-top:5px;
 		width:100%;
 	}
-	
 }
 
 @media (max-width: 640px) {
+
 	.rev_slider,
 	.page-title{
 		margin-top:0px !important;	
@@ -145,24 +168,15 @@
 	
 	.page-title{
 		text-align:center;
-	}
-	
-}
-
-@media (max-width: 700px) {
-	.feature{
-	
-	}
-}
-
-@media (max-width: 575px) {
-
+	}	
 }
 
 @media (max-width: 359px) {
+
 	.feature .item-list .item .content-box p{
 		display:none;
 	}
+
 	.feature .item-list .item .content-box h3{
 		margin-top:10px;
 		text-align:center;
@@ -170,56 +184,95 @@
 }
 
 @media only screen and (min-width: 1200px){
-.container {padding: 0;}
-.container-fluid{padding: 0;}      
+	
+	.container {
+		padding: 0;
+	}
+	
+	.container-fluid{
+		padding: 0;
+	}      
 }
 
-@media only screen and (min-width: 991px){
-  .mobile-menu {
-    display: none;
-  }      
+@media only screen and (min-width: 992px){
+
+	.mobile-menu {
+		display: none;
+  	}      
 }
-@media only screen and (max-width: 991px){
-    
+
+/* 
+	Aşağıdaki Sorunu Gidermek İçin :
+
+* Mobil görünümde menü ikonuna (hamburger menü) tıkladığında, 
+hem mobil menü hem de PC menüsü (üstteki yatay menü) 
+birlikte görünmeye devam ediyor. */
+@media screen and (max-width: 992px) {
+
+	.main-menu .navigation {
+    	display: none !important;
+  	}
+
+	/* .mainmenu-area,
+  	.main-menu .navbar-header {
+  		margin: 0;
+  		padding: 0;
+  		left: 0;
+  		right: 0;
+  		box-sizing: border-box;
+  	} */
+  
+  	.mainmenu-area .container {
+  		padding: 0;
+  		margin: 0;
+  		width: 100%;
+  	}
+
+	.mainmenu-area .navbar-header {
+		margin-top: -30px;
+	}
+}
 
 /*=================== mobile-menu ======================*/
+@media only screen and (max-width: 992px){
+	
+	.mainmenu-area .menu-column {
+		float: left;
+		width: 100%;
+	}
 
-  .navigation {
-    display: none;
-  } 
-
-  .main-menu .collapse {
-    border: 0px;
-    max-height: 300px;
-    display: none !important;
-    overflow: auto !important;
-  } 
-
-  .main-menu .collapse.in, 
-  .main-menu .collapsing {
-    display: block !important;
-  } 
-
-  .main-menu .navbar-header{
-    padding: 14px 0px;
-    float: none;
-    background: rgb(0, 37, 74);
-  }  
-
-  .main-menu .navbar-toggle {
-    float: none;
-    margin: 0;
-    display: block;
-  }  
-
-  .main-menu .navbar-toggle .icon-bar {
-    background: #fdc716;
-    width: 30px;
-  }  
-/*=================================menu=======================*/     
+	.navigation {
+		display: none;
+	} 
+	
+	.main-menu .collapse {
+		border: 0px;
+		max-height: 300px;
+		display: none !important;
+		overflow: auto !important;
+	} 
+	
+	.main-menu .collapse.in, 
+	.main-menu .collapsing {
+		display: block !important;
+	} 
+	
+	.main-menu .navbar-header{
+		padding: 14px 0px;
+		float: none;
+		background: rgb(0, 37, 74);
+	}  
+	
+	.main-menu .navbar-toggle {
+		float: none;
+		margin: 0;
+		display: block;
+		padding-left: 3%;
+	}  
+	
+	.main-menu .navbar-toggle .icon-bar {
+		background: #fdc716;
+		width: 30px;
+  	}
 }
-
   
-
-
-

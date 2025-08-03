@@ -28,7 +28,7 @@
 20. Brand Area
 21. Footer
 22. Footer bottom bar
-23. Scrool Top
+23. Call Buttons
 24. Loader
 
 ****************************************************************************************************************
@@ -421,7 +421,7 @@ button {
 
 /* mobile menu */
 
-.mobile-menu > li > a{
+.mobile-menu > li > a {
 	background: #fff;
 	padding:10px 20px;
 	line-height:22px;
@@ -440,13 +440,13 @@ button {
 /* Mainmenu fixed style */
 
 @-webkit-keyframes menu_sticky {
-	0%   {margin-top:-100px;}
+	0%   {margin-top: -100px;}
 	50%  {margin-top: -90px;}
 	100% {margin-top: 0;}
 }
 
 @keyframes menu_sticky {
-	0%   {margin-top:-100px;}
+	0%   {margin-top: -100px;}
 	50%  {margin-top: -90px;}
 	100% {margin-top: 0;}
 }
@@ -929,7 +929,7 @@ button {
 */
 
 .call-to-action {
-	background: #00254a;
+	background: var(--koyu-mavi);
 	padding: 40px 0;
 	color: #fff;
 }
@@ -1894,7 +1894,7 @@ button {
 	text-align: center;
 }
 
-.footer-bottom .social-links a{
+.footer-bottom .social-links a {
 	display:inline-block;
 	font-size: 20px;
 	font-weight:normal;
@@ -1903,11 +1903,11 @@ button {
 	line-height:26px;
 }
 
-.footer-bottom a:hover{
+.footer-bottom a:hover span {
 	color: var(--logo-mavi);
 }
 
-.footer-bottom .copyright-text{
+.footer-bottom .copyright-text {
 	font-family: 'Open Sans', sans-serif;
 	font-weight:400;
 	font-size:14px;
@@ -1925,39 +1925,59 @@ button {
 
 /*
 =================================================
-	23. Scrool top
+	23. Call Buttons
 =================================================
 */
 
-.scroll-top {
-	width: 50px;
-    height: 40px;
+.call-me {
+    width: 50px;
+    height: 50px;
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    display: none;
+    z-index: 999;
+    border-radius: 50%;
     color: #fff;
-    text-align: center;
-    background: #ffc104;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    pointer-events: none; /* tıklanamaz hale getir */
 }
 
-.scroll-top span:before {
-	font-size: 27px;
+.call-me:hover {
+    transform: scale(1.1);
 }
 
-.scroll-top:after {
-	position: absolute;
-	z-index: -1;
-	content: '';
-	top: 100%;
-	left: 5%;
-	height: 10px;
-	width: 90%;
-	opacity: 1;
-	background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
-	background: -webkit-radial-gradient(center ellipse, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
-	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
+/* Sol alt - Telefon */
+.call-me.tel {
+    left: 30px;
+    background-color: var(--logo-mavi);
+}
+
+.call-buttons .tel:hover {
+	color: var(--logo-mavi);
+	background-color: #fff;
+}
+
+/* Sağ alt - WhatsApp */
+.call-me.wp {
+	right: 30px;
+    background-color: #25d366;
+}
+
+.call-buttons .wp:hover {
+	color: #25d366;
+	background-color: #fff;
+}
+
+/* Görünür hale gelince */
+.call-me.visible {
+    opacity: 1;
+    pointer-events: auto; /* tıklanabilir hale getir */
 }
 
 /*
