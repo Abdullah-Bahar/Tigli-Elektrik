@@ -880,3 +880,10 @@ window.addEventListener("scroll", function () {
 	  buttons.forEach(btn => btn.classList.remove("visible"));
 	}
 });
+
+// Arama linklerine tıklandıktan sonra butonlardaki focus'u kaldırması için 
+document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me/"], a[href^="https://api.whatsapp.com/"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      	this.blur(); // focus'u kaldır
+    });
+});
