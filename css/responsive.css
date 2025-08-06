@@ -1,278 +1,180 @@
+/* ==========================================================================
+   Genel Responsive Ayarlar
+   ========================================================================== */
+
+/* Ekran Genişliği: 1200px ve üstü */
+@media only screen and (min-width: 1200px) {
+    .container,
+    .container-fluid {
+        padding: 0;
+    }
+}
+
+/* Ekran Genişliği: 1199px ve altı */
 @media (max-width: 1199px) {
-
-	.recent-project .owl-controls{
-		display:none;
-	}
-
-	.navigation li a {
-    	padding: 7px 7px 28px;
-	}
-
-	.mainmenu-area .thm-btn {
-    	padding: 0 13px;
-	}
+    /* Genel menü ve buton ayarları */
+    .navigation li a {
+        padding: 7px 7px 28px;
+    }
+	/* Ekran boyutunu küçültürken "Hemen Ara" butonun bozulmasını engelliyor */
+    .mainmenu-area .thm-btn {
+        padding: 0 13px;
+    }
 }
 
-@media (max-width: 1200px) and (min-width: 992px) {
-	.theme_menu .thm-btn {
-		padding: 0 13px;
-	}
+/* ==========================================================================
+   Tablet ve Mobil Menü Ayarları (992px ve altı)
+   ========================================================================== */
+
+/* Ekran Genişliği: 992px ve üstü */
+@media only screen and (min-width: 992px) {
+    /* Mobil menü ve responsive logoları gizle */
+    .mainmenu-area .logo-responsive,
+    .mobile-menu {
+        display: none;
+    }
 }
 
-@media (max-width: 1200px) and (min-width:992px) {
-
-	.two-column .inner-box .image-box {
-		position: relative;
-		margin-bottom: -95px;
-
-	}
-	.two-column .content-box{
-		padding: 30px 0px 80px;
-	}
-}
-
-@media (max-width: 1024px) {
-
-	.project-carousel .owl-controls .owl-nav {
-		top: auto;
-		left: 0;
-		right: 0;
-	}
-
-	.recent-project .owl-controls {
-		position: absolute;
-		bottom: 45px;
-		left: -155px;
-	}
-}
-
+/* Ekran Genişliği: 992px ve altı */
 @media (max-width: 992px) {
+    /* Genel yerleşim ve menü ayarları */
+    .right-area {
+        position: absolute;
+        right: 15px;
+        top: -14px;
+    }
+    .mainmenu-area .right-area {
+        margin-right: 3%;
+    }
+    .main-logo img {
+        height: 47px;
+        width: auto;
+    }   
+    .main-logo {
+        margin: 10px 0 10px;
+        text-align: center;
+    }
+    .call-to-action {
+        text-align: center;
+    }
+    .call-to-action a.thm-btn {
+        float: none !important;  
+        margin-top: 20px;
+    }
 
-	.right-area {
-		position: absolute;
-		right: 15px;
-   	 	top: -14px;
-	}
+    /* Mobil görünümde masaüstü menü ve logoyu gizle */
+    .mainmenu-area .logo-pc,
+    .main-menu .navigation,
+    .navigation {
+        display: none !important;
+    }
+    .mainmenu-area .container {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .mainmenu-area .navbar-header {
+        margin-top: -30px;
+    }
 
-	.mainmenu-area .right-area {
-   		margin-right: 3%;
-	}
-
-	.nav_side_content .search_option form {
-	    width: 250px;
-	    right: -25px;
-	    top: 52px;
-	}
-
-	.theme_menu {
-		background: #f7f7f7;
-	}
-
-	.main-logo {
-	    margin: 15px 0 15px;
-		text-align: center;
-	}
-
-	.nav_side_content {
-		margin-top: 31px;
-	}
-
-	.two-column .content-box{
-		padding: 30px 0px 80px;
-	}
-
-	.about .item-list .item.clearfix {
-		margin-top: 0px;
-	}
-
-	.call-to-action {
-		text-align: center;
-	}
-
-	.call-to-action a.thm-btn {
-		float: none !important;  
-		margin-top:20px;
-	}
-	
-	.about-faq .accordion-box{
-		margin-top: 50px;
-	}
+    /* Mobil menü genel ayarları */
+    .mainmenu-area .menu-column {
+        float: left;
+        width: 100%;
+    }
+    .main-menu .collapse {
+        border: 0px;
+        max-height: 300px;
+        display: none !important;
+        overflow: auto !important;
+    }
+    .main-menu .collapse.in, 
+    .main-menu .collapsing {
+        display: block !important;
+    }
+    .main-menu .navbar-header {
+        padding: 14px 0px;
+        float: none;
+        background: rgb(0, 37, 74);
+    }  
+    .main-menu .navbar-toggle {
+        float: none;
+        margin: 0;
+        display: block;
+        padding-left: 3%;
+    }  
+    .main-menu .navbar-toggle .icon-bar {
+        background: #fdc716;
+        width: 30px;
+    }
 }
 
+/* ==========================================================================
+   Telefon ve Küçük Ekran Ayarları
+   ========================================================================== */
+
+/* Ekran Genişliği: 768px ve altı */
 @media (max-width: 768px) {
-	
-	.header-top .top-right, 
-	.header-top .top-left {
-		width: 100%;
-		text-align:center;
+    /* Header ve top bar ayarları */
+    .header-top .top-right, 
+    .header-top .top-left {
+        width: 100%;
+        text-align: center;
+    }
+    .header-top .top-left ul {
+        text-align: center;
+    }
+    .header-top .top-left ul li {
+        display: inline-block;
+        float: none;
+    }
+    .header-top .top-right {
+        margin: 10px 0px;
+    }
+    
+    /* Sayfa içi ayarlar */
+    .about-us .about-info {
+        margin-bottom: 50px;
+    }
+	/* About sayfasındaki ikinci about kısmının başlığı resme çok yapışık olduğu için */
+	.about-2 .video-image-box {
+		margin-bottom: 30px;
 	}
-	
-	.about-us .about-info{
-		margin-bottom: 50px;
-	}
-	
-	.header-top .top-right ul,
-	.header-top .top-left ul {
-		text-align: center;
-	}
-	
-	.header-top .top-right ul li,
-	.header-top .top-left ul li {
-		display: inline-block;
-		float: none;
-	}
-	
-	.our-team .owl-controls .owl-nav{
-		margin-bottom: 10px !important;
-	}
-	
-	.latest-news .owl-theme .owl-nav{
-		margin-bottom: 10px !important;
-	}
-	
-	.page-title .path{
-		text-align:center;
-	}
-	
-	.sidebar-page .sidebar {
-		position: relative;
-		padding-left: 0px;
-	}
-	
-	.header-top .top-right{
-		margin:10px 0px;
-	}
-	
-	.footer-bottom{
-		padding-bottom:70px;
-	}
-	
-	.footer-bottom .pull-left{
-		text-align:center;
-		width:100%;
-	}
-	
-	.footer-bottom .pull-right{
-		text-align:center;
-		margin-top:5px;
-		width:100%;
-	}
+    .page-title .path {
+        text-align: center;
+    }
+    
+    /* Footer ayarları */
+    .footer-bottom {
+        padding-bottom: 70px;
+    }
+    .footer-bottom .pull-left,
+    .footer-bottom .pull-right {
+        text-align: center;
+        width: 100%;
+    }
+    .footer-bottom .pull-right {
+        margin-top: 5px;
+    }
 }
 
-@media (max-width: 640px) {
-
-	.rev_slider,
-	.page-title{
-		margin-top:0px !important;	
-	}
-	
-	.page-title{
-		text-align:center;
-	}	
+/* Ekran Genişliği: 640px ve altı */
+@media (max-width: 768px) {
+    .rev_slider,
+    .page-title {
+        margin-top: 0px !important;    
+        text-align: center;
+    }
 }
 
+/* Ekran Genişliği: 359px ve altı */
 @media (max-width: 359px) {
-
-	.feature .item-list .item .content-box p{
-		display:none;
-	}
-
-	.feature .item-list .item .content-box h3{
-		margin-top:10px;
-		text-align:center;
-	}
+    /* Özellikler bölümü (feature section) için ayarlar */
+    .feature .item-list .item .content-box p {
+        display: none;
+    }
+    .feature .item-list .item .content-box h3 {
+        margin-top: 10px;
+        text-align: center;
+    }
 }
-
-@media only screen and (min-width: 1200px){
-	
-	.container {
-		padding: 0;
-	}
-	
-	.container-fluid{
-		padding: 0;
-	}      
-}
-
-@media only screen and (min-width: 992px){
-
-	.mobile-menu {
-		display: none;
-  	}      
-}
-
-/* 
-	Aşağıdaki Sorunu Gidermek İçin :
-
-* Mobil görünümde menü ikonuna (hamburger menü) tıkladığında, 
-hem mobil menü hem de PC menüsü (üstteki yatay menü) 
-birlikte görünmeye devam ediyor. */
-@media screen and (max-width: 992px) {
-
-	.main-menu .navigation {
-    	display: none !important;
-  	}
-
-	/* .mainmenu-area,
-  	.main-menu .navbar-header {
-  		margin: 0;
-  		padding: 0;
-  		left: 0;
-  		right: 0;
-  		box-sizing: border-box;
-  	} */
-  
-  	.mainmenu-area .container {
-  		padding: 0;
-  		margin: 0;
-  		width: 100%;
-  	}
-
-	.mainmenu-area .navbar-header {
-		margin-top: -30px;
-	}
-}
-
-/*=================== mobile-menu ======================*/
-@media only screen and (max-width: 992px){
-	
-	.mainmenu-area .menu-column {
-		float: left;
-		width: 100%;
-	}
-
-	.navigation {
-		display: none;
-	} 
-	
-	.main-menu .collapse {
-		border: 0px;
-		max-height: 300px;
-		display: none !important;
-		overflow: auto !important;
-	} 
-	
-	.main-menu .collapse.in, 
-	.main-menu .collapsing {
-		display: block !important;
-	} 
-	
-	.main-menu .navbar-header{
-		padding: 14px 0px;
-		float: none;
-		background: rgb(0, 37, 74);
-	}  
-	
-	.main-menu .navbar-toggle {
-		float: none;
-		margin: 0;
-		display: block;
-		padding-left: 3%;
-	}  
-	
-	.main-menu .navbar-toggle .icon-bar {
-		background: #fdc716;
-		width: 30px;
-  	}
-}
-  

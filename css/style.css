@@ -565,7 +565,8 @@ button {
 }
 
 .tp-bannertimer {
-	display: none;
+	/* background-color: rgba(255, 193, 4, 0.3); */
+	background-color: rgba(0, 185, 242, 0.3);
 }
 
 .rev_slider_wrapper .tparrows {

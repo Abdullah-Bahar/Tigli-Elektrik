@@ -9,18 +9,19 @@ function revolutionSliderActiver () {
 			sliderLayout:"auto",
 			dottedOverlay:"yes",
 			delay:5000,
+			// Slider üstündeki sağ sol oklar
 			navigation: {
 				arrows:{enable:true,
 						left: {
                         h_align: "left",
                         v_align: "center",
-                        h_offset: 60,
+                        h_offset: 20,
                         v_offset: 0
                     },
                     right: {
                         h_align: "right",
                         v_align: "center",
-                        h_offset: 60,
+                        h_offset: 20,
                         v_offset: 0
                     }
 
@@ -73,7 +74,6 @@ function mainmenu() {
 			$(this).prev('ul').slideToggle(500);
 		});
 	}
-
 }
 
 function stickyHeader () {
