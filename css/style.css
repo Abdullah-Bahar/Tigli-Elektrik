@@ -422,110 +422,216 @@ button {
 
 /* 
 =============================================
-	6. Rev Slider style
+	6. Slider style
 =============================================
 */
 
-.rev_slider_wrapper .slide-content-box h1 {
-	color: var(--logo-mavi);
+.swiper {
+  height: 90vh;
+  min-height: 320px;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  height: 90vh;
+  min-height: 320px;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+  transition: filter 1.2s cubic-bezier(.4,0,.2,1), opacity 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+.swiper-slide img {
+	height: 90vh;
+	object-fit: cover;
+	display: block;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swiper-slide-active {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 5;
+}
+
+.slide-content {
+  position: absolute;
+  top: 40%;
+	left: 12%;
+  color: white;
+  text-align: left;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Alt alta sıralama */
+  gap: 15px; /* Öğeler arası boşluk */
+}
+
+/* Başlıklar */
+.slide-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.slide-content h1 {
+  font-size: 54px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--logo-mavi);
+}
+
+.slide-content h1 span {
 	font-size: 60px;
-	line-height: 62px;
-	margin: 14px 0 9px;
-	font-weight: 700;
-	padding:0px 25px;
-	font-family: 'Roboto', sans-serif;
-	text-transform:uppercase;
+	color: var(--sari);
 }
 
-.rev_slider_wrapper .slide-content-box h1 span{
-	color:#ffc104;
-	font-size: 70px;
-}
-
-.rev_slider_wrapper .slide-content-box h2{
-	font-size: 45px;
-	color:#fff;
-	font-family: 'Roboto', sans-serif;
-	text-transform:uppercase;
-	font-weight:700;
-}
-
-.rev_slider_wrapper .slide-content-box p{
-	color: #ffffff;
-	font-size: 15px;
-	line-height: 30px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	margin: 0 0 30px;
-}
-
-.rev_slider_wrapper .button .thm-btn:hover{
-	background: #fff;
-    color: #ffc104;
-	border:2px solid #ffc104;
-	transition:.5s;
-}
-
-.rev_slider_wrapper .slide-content-box .button a{
-	padding: 0px 22px;
-	margin-right: 15px;
-	transition: all 500ms ease !important;
-	-moz-transition: all 500ms ease !important;
-	-webkit-transition: all 500ms ease !important;
-	-ms-transition: all 500ms ease !important;
-	-o-transition: all 500ms ease !important;
-}
-
-.rev_slider_wrapper .slide-content-box .button a.thm-btn.our-solution{
-	background: #fff;
-	padding: 0px 35px;
-	color: #222;
-	border-color: #fff;
-}
-
-.rev_slider_wrapper .slide-content-box .button a.thm-btn.our-solution:hover{
-	background: #48c7ec;
+/* Buton */
+.slide-content button {
+	padding: 0px 26px;
+	background-color: var(--sari);
 	color: #fff;
-	border-color: #48c7ec;
+	font-weight: 700;
+	cursor: pointer;
+	max-width: fit-content;
 }
 
-.rev_slider_wrapper .slide-content-box.last-slide p{
-	margin: 0;    
+.slide-content button:hover {
+ 	background-color: #fff;
+	color: var(--sari);
+	border-color: var(--sari);
 }
 
-.rev_slider_wrapper .slide-content-box.last-slide a{
-	margin: 0 8px;    
+/* Swiper ok ikonları için Flaticon kodlarını kaldır, Font Awesome HTML içindeki <i> ile kullanılacak */
+
+/* Swiper next/prev butonları: Başta gizli, slider üzerine gelince görünür */
+.sw-button-next,
+.sw-button-prev {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.rev_slider_wrapper .slotholder {
-	position: relative;
+/* Sağ ve sol konumlandırma */
+.sw-button-next { right: 20px; }
+.sw-button-prev { left: 20px; }
+
+/* Slider üzerine gelince butonlar görünür */
+.swiper:hover .sw-button-next,
+.swiper:hover .sw-button-prev {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.slotholder:after {
-	background: rgba(0, 0, 0, 0.20);
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    pointer-events: none;
+/* Ok ikonunu ortala ve büyüt (Font Awesome) */
+.sw-button-next i,
+.sw-button-prev i {
+  height: 28px;
+  width: 28px;
+  font-weight: bold;
+  color: #fff;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 15px;
+  line-height: 1;
 }
 
-.tp-bannertimer {
-	/* background-color: rgba(255, 193, 4, 0.3); */
-	background-color: rgba(0, 185, 242, 0.2);
+/* Hover'da arka plan hafif beyazlaşsın */
+.sw-button-next:hover,
+.sw-button-prev:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: #fff;
+  color: #fff;
+  transition: background 0.3s;
 }
 
-.rev_slider_wrapper .tparrows {
-	background: transparent;
-	border: 2px solid #fff;
+.swiper {
+  position: relative;
 }
 
-/* .rev_slider_wrapper .tp-rightarrow {
-	background: transparent !important;
-} */
+/* Fade animasyonu sadece opacity ile */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Tüm yazılar başlangıçta görünmez */
+.animated-element {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.heading2.animated-element { transform: translateX(-80px); }
+.heading1.animated-element { transform: translateX(80px); }
+.btn.animated-element      { transform: translateY(60px); }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-80px);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(80px);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(60px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Çıkış animasyonları */
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0);}
+  to   { opacity: 0; transform: translateX(-80px);}
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0);}
+  to   { opacity: 0; transform: translateX(80px);}
+}
+@keyframes slideOutDown {
+  from { opacity: 1; transform: translateY(0);}
+  to   { opacity: 0; transform: translateY(60px);}
+}
 
 /*
 ===============================================
@@ -1474,13 +1580,13 @@ button {
 	flex-shrink: 0;
 }
 
-.feature-style-three .item-list .item .inner-box .icon-box .icon {
+.feature-style-three .item-list .item .inner-box .icon {
 	font-size: 46px;
 	color: var(--logo-mavi);
 	line-height: 1;
 }
 
-.feature-style-three .item-list .item .inner-box .icon-box .icon:before {
+.feature-style-three .item-list .item .inner-box .icon:before {
     font-size: 25px !important; /* !important ekledik */
 }
 
@@ -1804,9 +1910,3 @@ button {
   	background-repeat:no-repeat; 
 	background-image:url(../images/icons/preloader.webp);
 }
-
-/*
-=================================================
-	24. Intersection Observer
-=================================================
-*/

@@ -1,60 +1,69 @@
 "use strict"; // Start of use strict
 
-// revolution slider
-function revolutionSliderActiver () {
-    if ($('.rev_slider_wrapper #slider1').length) {
-        jQuery("#slider1").revolution({
-            sliderType:"standard",
-            sliderLayout:"auto",
-            dottedOverlay:"yes",
-            delay:5000,
-            // Slider üstündeki sağ sol oklar
-            navigation: {
-                arrows:{enable:true,
-                        left: {
-                        h_align: "left",
-                        v_align: "center",
-                        h_offset: 20,
-                        v_offset: 0
-                    },
-                    right: {
-                        h_align: "right",
-                        v_align: "center",
-                        h_offset: 20,
-                        v_offset: 0
-                    }
-
+function slider() {
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        speed: 1200,
+        navigation: {
+          nextEl: ".sw-button-next",
+          prevEl: ".sw-button-prev",
+        },
+        on: {
+            slideChangeTransitionStart: function () {
+                // Yazı animasyonlarını sıfırla (gizle)
+                var slides = this.slides;
+                slides.forEach(function(slide){
+                    slide.querySelectorAll('.animated-element').forEach(function(el){
+                        el.style.opacity = 0;
+                        el.style.animation = 'none';
+                    });
+                });
+            },
+            slideChangeTransitionEnd: function () {
+                // Yeni slaytta yazı animasyonlarını başlat
+                var activeSlide = this.slides[this.activeIndex];
+                if (activeSlide) {
+                    activeSlide.querySelectorAll('.heading2.animated-element').forEach(function(el){
+                        el.style.animation = 'slideInLeft 1.2s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animationDelay = '0.3s';
+                    });
+                    activeSlide.querySelectorAll('.heading1.animated-element').forEach(function(el){
+                        el.style.animation = 'slideInRight 1.2s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animationDelay = '0.8s';
+                    });
+                    activeSlide.querySelectorAll('.btn.animated-element').forEach(function(el){
+                        el.style.animation = 'slideInUp 1.2s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animationDelay = '1.5s';
+                    });
                 }
-            },
-
-            gridwidth: [1170, 940, 720, 480],
-            gridheight: [800, 700, 600, 550],
-            lazyType: "none",
-            parallax: {
-                type: "mouse",
-                origo: "slidercenter",
-                speed: 2000,
-                levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
-            },
-            shadow: 0,
-            spinner: "off",
-            stopLoop: "off",
-            stopAfterLoops: -1,
-            stopAtSlide: -1,
-            shuffle: "off",
-            autoHeight: "off",
-            hideThumbsOnMobile: "off",
-            hideSliderAtLimit: 0,
-            hideCaptionAtLimit: 0,
-            hideAllCaptionAtLilmit: 0,
-            debugMode: false,
-            fallbacks: {
-                simplifyAll: "off",
-                nextSlideOnWindowFocus: "off",
-                disableFocusListener: false,
             }
-        });
-    };
+        }
+    });
+
+    // --- EKLE: İlk açılışta animasyonları başlat ---
+    setTimeout(function() {
+        var activeSlide = swiper.slides[swiper.activeIndex];
+        if (activeSlide) {
+            activeSlide.querySelectorAll('.heading2.animated-element').forEach(function(el){
+                el.style.animation = 'slideInLeft 1.2s cubic-bezier(.4,0,.2,1) both';
+                el.style.animationDelay = '0.3s';
+            });
+            activeSlide.querySelectorAll('.heading1.animated-element').forEach(function(el){
+                el.style.animation = 'slideInRight 1.2s cubic-bezier(.4,0,.2,1) both';
+                el.style.animationDelay = '0.8s';
+            });
+            activeSlide.querySelectorAll('.btn.animated-element').forEach(function(el){
+                el.style.animation = 'slideInUp 1.2s cubic-bezier(.4,0,.2,1) both';
+                el.style.animationDelay = '1.5s';
+            });
+        }
+    }, 400); // 400ms gecikme, Swiper'ın yüklenmesini bekler
 }
 
 // stickyHeader
@@ -274,7 +283,7 @@ window.addEventListener("scroll", function () {
 // instance of fuction while Document ready event 
 jQuery(document).on('ready', function () {
     (function ($) {
-        revolutionSliderActiver(); 
+		slider();
         handlePreloader();
     })(jQuery);
 });
