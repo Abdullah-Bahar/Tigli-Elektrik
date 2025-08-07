@@ -3,10 +3,6 @@
 	1. Imported styles
 ==========================================
 */
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-
 @import url(../css/bootstrap.min.css);
 
 /* Font İçin */
@@ -971,7 +967,7 @@ button {
 */
 
 .page-title {
-	background: url(../images/background/bg-2.jpg)no-repeat;
+	background: url(../images/background/bg-2.webp)no-repeat;
 	padding: 135px 0px 135px;
 	overflow: hidden;
 	background-position: center center;
@@ -1806,7 +1802,7 @@ button {
 	background-color:#ffffff; 
 	background-position:center center;
   	background-repeat:no-repeat; 
-	background-image:url(../images/icons/preloader.gif);
+	background-image:url(../images/icons/preloader.webp);
 }
 
 /*
