@@ -5,14 +5,8 @@
 */
 @import url(../css/bootstrap.min.css);
 
-/* Font İçin */
-@import url(../css/font-awesome.css);
-@import url(../css/flaticon.css); /* Contact Sayfasındaki İkonlar İçin */
-
 @import url(../css/owl.carousel.css);
-
 @import url(../css/jquery-ui.css);
-
 @import url(../css/animate.min.css);
 
 /* 
@@ -233,6 +227,10 @@ button {
 	font-family: 'Open Sans', sans-serif;
 	-webkit-transition:.5s;
 	transition:.5s;
+}
+
+.header-top .links-nav li a span.fa {
+	font-size: 13px;
 }
 
 .header-top .links-nav li a:hover{
@@ -1685,7 +1683,7 @@ button {
 
 .footer {
 	position: relative;
-	background: url(../images/background/bg-1.jpg);
+	background: url(../images/background/bg-1.webp);
 	background-size: cover;
 	background-position: center;
 	z-index: 1;
@@ -1885,6 +1883,10 @@ button {
 .call-me.tel {
     left: 30px;
     background-color: var(--logo-mavi);
+}
+
+.call-me i.fa {
+	font-size: 16px;
 }
 
 .call-buttons .tel:hover {
