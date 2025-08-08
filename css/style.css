@@ -509,8 +509,26 @@ button {
 	color: var(--sari);
 }
 
+.slide-content a {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* 2. slide'daki yazıların ortalanması için */
+#slide-2 .slide-content {
+ left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#slide-2 .slide-content h1 {
+  white-space: nowrap;
+}
+
 /* Buton */
-.slide-content button {
+.slide-content .thm-btn {
 	padding: 0px 26px;
 	background-color: var(--sari);
 	color: #fff;
@@ -519,10 +537,13 @@ button {
 	max-width: fit-content;
 }
 
-.slide-content button:hover {
+.slide-content .thm-btn:hover {
  	background-color: #fff;
-	color: var(--sari);
 	border-color: var(--sari);
+}
+
+.slide-content .thm-btn:hover a {
+	  color: var(--sari);
 }
 
 /* Swiper ok ikonları için Flaticon kodlarını kaldır, Font Awesome HTML içindeki <i> ile kullanılacak */

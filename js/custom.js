@@ -30,15 +30,15 @@ function slider() {
                 var activeSlide = this.slides[this.activeIndex];
                 if (activeSlide) {
                     activeSlide.querySelectorAll('.heading2.animated-element').forEach(function(el){
-                        el.style.animation = 'slideInLeft 1.2s cubic-bezier(.4,0,.2,1) both';
-                        el.style.animationDelay = '0.3s';
+                        el.style.animation = 'slideInLeft 1s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animationDelay = '0.2s';
                     });
                     activeSlide.querySelectorAll('.heading1.animated-element').forEach(function(el){
-                        el.style.animation = 'slideInRight 1.2s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animation = 'slideInRight 1s cubic-bezier(.4,0,.2,1) both';
                         el.style.animationDelay = '0.8s';
                     });
                     activeSlide.querySelectorAll('.btn.animated-element').forEach(function(el){
-                        el.style.animation = 'slideInUp 1.2s cubic-bezier(.4,0,.2,1) both';
+                        el.style.animation = 'slideInUp 1s cubic-bezier(.4,0,.2,1) both';
                         el.style.animationDelay = '1.5s';
                     });
                 }
@@ -51,19 +51,19 @@ function slider() {
         var activeSlide = swiper.slides[swiper.activeIndex];
         if (activeSlide) {
             activeSlide.querySelectorAll('.heading2.animated-element').forEach(function(el){
-                el.style.animation = 'slideInLeft 1.2s cubic-bezier(.4,0,.2,1) both';
-                el.style.animationDelay = '0.3s';
+                el.style.animation = 'slideInLeft 1s cubic-bezier(.4,0,.2,1) both';
+                el.style.animationDelay = '0.2s';
             });
             activeSlide.querySelectorAll('.heading1.animated-element').forEach(function(el){
-                el.style.animation = 'slideInRight 1.2s cubic-bezier(.4,0,.2,1) both';
+                el.style.animation = 'slideInRight 1s cubic-bezier(.4,0,.2,1) both';
                 el.style.animationDelay = '0.8s';
             });
             activeSlide.querySelectorAll('.btn.animated-element').forEach(function(el){
-                el.style.animation = 'slideInUp 1.2s cubic-bezier(.4,0,.2,1) both';
+                el.style.animation = 'slideInUp 1s cubic-bezier(.4,0,.2,1) both';
                 el.style.animationDelay = '1.5s';
             });
         }
-    }, 400); // 400ms gecikme, Swiper'ın yüklenmesini bekler
+    }, 400); // 200ms gecikme, Swiper'ın yüklenmesini bekler
 }
 
 // stickyHeader
