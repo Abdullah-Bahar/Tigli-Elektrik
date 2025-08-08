@@ -236,3 +236,49 @@
     padding: 0 1em;
   }
 }
+
+/* Mobil ve tablet görünümde hover efektlerini kaldır */
+@media (max-width: 992px) {
+    .service .item:hover:before {
+        opacity: 0 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+
+    .service .item:hover .default-overlay-outer {
+        top: -100% !important;
+        opacity: 0 !important;
+    }
+
+    .service .item:before {
+        display: none !important;
+    }
+
+    .service .default-overlay-outer {
+        display: none !important;
+    }
+}
+
+/* Preferences kutucukları mobilde PC görünümünün yarısına düşsün ve ortalansın */
+@media (max-width: 992px) {
+  .preference-item {
+    width: 50% !important;
+  }
+}
+
+/* Servis kartlarının boyutları ayarlanıyor */
+@media (max-width: 992px) and (min-width: 400px) {
+  .service-item {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-item {
+    width: 80% !important;
+    max-width: 240px;
+    margin: 0 auto !important;
+    float: none !important;
+    display: block !important;
+  }
+}
