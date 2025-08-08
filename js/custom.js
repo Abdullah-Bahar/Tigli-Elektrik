@@ -270,6 +270,21 @@ document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me/"], a[href^="
     });
 });
 
+// Sayfa yüklendiğinde veya önbellekten geri gelindiğinde en üste kaydırma fonksiyonu
+function scrollToTopOnLoad() {
+    // Normal sayfa yüklemelerinde çalışır
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+    }, 0);
+
+    // Eğer sayfa tarayıcı önbelleğinden gelmişse de çalışır
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.scrollTo(0, 0);
+        }
+    };
+}
+
 // Call me button visibility on scroll (tel ve wp)
 window.addEventListener("scroll", function () {
     const buttons = document.querySelectorAll(".call-me");
@@ -282,6 +297,9 @@ window.addEventListener("scroll", function () {
 
 // instance of fuction while Document ready event 
 jQuery(document).on('ready', function () {
+	/* Sayfa yenilendiğinde sayfa başına dönsün */
+	window.scrollTo(0, 0);
+
     (function ($) {
 		slider();
         handlePreloader();
@@ -294,6 +312,7 @@ jQuery(window).on('load', function () {
         clientCarousel();
         servicecarousel ();
         brandCarousel ();
+		scrollToTopOnLoad();
     })(jQuery);
 });
 
