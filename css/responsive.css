@@ -266,6 +266,20 @@
   }
 }
 
+@media (max-width: 768px) {
+	.shop .preference-item .content-layer a {
+		line-height: 1.5;
+		padding: 5px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.shop .preference-item .content-layer a {
+		font-size: 10px;
+	}
+}
+
 /* Servis kartlarının boyutları ayarlanıyor */
 @media (max-width: 992px) and (min-width: 400px) {
   .service-item {
