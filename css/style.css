@@ -421,28 +421,28 @@ button {
 */
 
 .swiper {
-  height: 90vh;
-  min-height: 320px;
-  max-height: 100vh;
-  position: relative;
-  overflow: hidden;
+	height: 90vh;
+	min-height: 320px;
+	max-height: 100vh;
+	position: relative;
+	overflow: hidden;
 }
 
 .swiper-slide {
-  height: 90vh;
-  min-height: 320px;
-  max-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 90vh;
+	min-height: 320px;
+	max-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .swiper-slide {
-  position: relative;
-  overflow: hidden;
-  transition: filter 1.2s cubic-bezier(.4,0,.2,1), opacity 1.2s cubic-bezier(.4,0,.2,1);
+	position: relative;
+	overflow: hidden;
+	transition: filter 1.2s cubic-bezier(.4,0,.2,1), opacity 1.2s cubic-bezier(.4,0,.2,1);
 }
 
 .swiper-slide img {
@@ -452,50 +452,50 @@ button {
 }
 
 .swiper-slide:not(.swiper-slide-active) {
-  filter: blur(12px);
-  opacity: 0;
-  pointer-events: none;
+	filter: blur(12px);
+	opacity: 0;
+	pointer-events: none;
 }
 
 .swiper-slide-active {
-  filter: blur(0);
-  opacity: 1;
+	filter: blur(0);
+	opacity: 1;
 }
 
 .swiper-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 5;
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.4);
+	z-index: 5;
 }
 
 .slide-content {
-  position: absolute;
-  top: 40%;
+	position: absolute;
+	top: 40%;
 	left: 12%;
-  color: white;
-  text-align: left;
-  z-index: 10;
-  display: flex;
-  flex-direction: column; /* Alt alta sıralama */
-  gap: 15px; /* Öğeler arası boşluk */
+	color: white;
+	text-align: left;
+	z-index: 10;
+	display: flex;
+	flex-direction: column; /* Alt alta sıralama */
+	gap: 15px; /* Öğeler arası boşluk */
 }
 
 /* Başlıklar */
 .slide-content h2 {
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
 }
 
 .slide-content h1 {
-  font-size: 54px;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin: 0;
-  color: var(--logo-mavi);
+	font-size: 54px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 0;
+	color: var(--logo-mavi);
 }
 
 .slide-content h1 span {
@@ -510,15 +510,15 @@ button {
 
 /* 2. slide'daki yazıların ortalanması için */
 #slide-2 .slide-content {
- left: 50%;
-  transform: translateX(-50%);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 #slide-2 .slide-content h1 {
-  white-space: nowrap;
+	white-space: nowrap;
 }
 
 /* Buton */
@@ -532,36 +532,34 @@ button {
 }
 
 .slide-content .thm-btn:hover {
- 	background-color: #fff;
+	background-color: #fff;
 	border-color: var(--sari);
 }
 
 .slide-content .thm-btn:hover a {
-	  color: var(--sari);
+	color: var(--sari);
 }
-
-/* Swiper ok ikonları için Flaticon kodlarını kaldır, Font Awesome HTML içindeki <i> ile kullanılacak */
 
 /* Swiper next/prev butonları: Başta gizli, slider üzerine gelince görünür */
 .sw-button-next,
 .sw-button-prev {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 20;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	z-index: 20;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* Sağ ve sol konumlandırma */
@@ -571,50 +569,50 @@ button {
 /* Slider üzerine gelince butonlar görünür */
 .swiper:hover .sw-button-next,
 .swiper:hover .sw-button-prev {
-  opacity: 1;
-  pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 /* Ok ikonunu ortala ve büyüt (Font Awesome) */
 .sw-button-next i,
 .sw-button-prev i {
-  height: 28px;
-  width: 28px;
-  font-weight: bold;
-  color: #fff;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 15px;
-  line-height: 1;
+	height: 28px;
+	width: 28px;
+	font-weight: bold;
+	color: #fff;
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 15px;
+	line-height: 1;
 }
 
 /* Hover'da arka plan hafif beyazlaşsın */
 .sw-button-next:hover,
 .sw-button-prev:hover {
-  background: rgba(255,255,255,0.2);
-  border-color: #fff;
-  color: #fff;
-  transition: background 0.3s;
+	background: rgba(255,255,255,0.2);
+	border-color: #fff;
+	color: #fff;
+	transition: background 0.3s;
 }
 
 .swiper {
-  position: relative;
+	position: relative;
 }
 
 /* Fade animasyonu sadece opacity ile */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+	from { opacity: 0; }
+	to   { opacity: 1; }
 }
 
 /* Tüm yazılar başlangıçta görünmez */
 .animated-element {
-  opacity: 0;
-  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+	opacity: 0;
+	transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
 }
 
 .heading2.animated-element { transform: translateX(-80px); }
@@ -622,35 +620,35 @@ button {
 .btn.animated-element      { transform: translateY(60px); }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-80px);}
-  to   { opacity: 1; transform: translateX(0);}
+	from { opacity: 0; transform: translateX(-80px);}
+	to   { opacity: 1; transform: translateX(0);}
 }
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(80px);}
-  to   { opacity: 1; transform: translateX(0);}
+	from { opacity: 0; transform: translateX(80px);}
+	to   { opacity: 1; transform: translateX(0);}
 }
 @keyframes slideInUp {
-  from { opacity: 0; transform: translateY(60px);}
-  to   { opacity: 1; transform: translateY(0);}
+	from { opacity: 0; transform: translateY(60px);}
+	to   { opacity: 1; transform: translateY(0);}
 }
 
 /* Çıkış animasyonları */
 @keyframes slideOutLeft {
-  from { opacity: 1; transform: translateX(0);}
-  to   { opacity: 0; transform: translateX(-80px);}
+	from { opacity: 1; transform: translateX(0);}
+	to   { opacity: 0; transform: translateX(-80px);}
 }
 @keyframes slideOutRight {
-  from { opacity: 1; transform: translateX(0);}
-  to   { opacity: 0; transform: translateX(80px);}
+	from { opacity: 1; transform: translateX(0);}
+	to   { opacity: 0; transform: translateX(80px);}
 }
 @keyframes slideOutDown {
-  from { opacity: 1; transform: translateY(0);}
-  to   { opacity: 0; transform: translateY(60px);}
+	from { opacity: 1; transform: translateY(0);}
+	to   { opacity: 0; transform: translateY(60px);}
 }
 
 /*
 ===============================================
-	7. Sec title
+7. Sec title
 ===============================================
 */
 
