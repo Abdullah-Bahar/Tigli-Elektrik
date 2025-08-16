@@ -116,18 +116,14 @@
 /* Ekran Genişliği: 768px ve altı */
 @media (max-width: 768px) {
     /* Header ve top bar ayarları */
-    .header-top .top-right, 
     .header-top .top-left {
+		display: none;
+	} 
+    .header-top .top-right {
         width: 100%;
         text-align: center;
     }
-    .header-top .top-left ul {
-        text-align: center;
-    }
-    .header-top .top-left ul li {
-        display: inline-block;
-        float: none;
-    }
+
     .header-top .top-right {
         margin: 10px 0px;
     }
