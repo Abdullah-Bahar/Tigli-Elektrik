@@ -20,6 +20,12 @@
     .mainmenu-area .thm-btn {
         padding: 0 13px;
     }
+
+	/* Project kısmı itemler için */
+	.blog-latest-news .item-container {
+		padding: 10px 0;
+	}
+
 }
 
 /* ==========================================================================
@@ -116,17 +122,13 @@
 /* Ekran Genişliği: 768px ve altı */
 @media (max-width: 768px) {
     /* Header ve top bar ayarları */
-    .header-top .top-left {
-		display: none;
-	} 
-    .header-top .top-right {
-        width: 100%;
-        text-align: center;
+    .header-top .top-left ul {
+        text-align: left;
     }
 
-    .header-top .top-right {
-        margin: 10px 0px;
-    }
+    .header-top .top-left ul li:last-child { 
+		display: none;
+	}
     
     /* Sayfa içi ayarlar */
     .about-us .about-info {
