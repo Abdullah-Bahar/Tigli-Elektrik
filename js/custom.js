@@ -255,9 +255,9 @@ function brandCarousel () {
                 1100:{
                     items:4
                 },
-                // 1200:{
-                //     items:5
-                // }
+                1200:{
+                    items:5
+                }
             }
         });
     }
